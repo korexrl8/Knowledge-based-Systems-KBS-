@@ -1,0 +1,27 @@
+1. (batch "run.clp")
+
+2. (run)
+
+(Siempre despues de utilizar un assert y comprobarlo con un run, utilizar (reset) para que pueda ingresar otro assert)
+
+3. Menudista, iPhone16, Banamex -> Oferta específica + banco preferido + recomendaciones
+
+(assert (orden-compra (customer-id 101)(item-tipo smartphone)(marca apple)(modelo "iPhone16")(qty 1)(pago-tipo tarjeta)(banco-tarjeta banamex)))
+(run)
+
+(Despues de utilizar, usar (reset))
+
+4. Mayorista, iPhone16, BBVA -> Oferta banco preferido + recomendaciones + vale por compra grande (qty >10)
+
+(assert (orden-compra (customer-id 102)(item-tipo smartphone)(marca apple)(modelo "iPhone16")(qty 30)(pago-tipo tarjeta)(banco-tarjeta bbva)))
+(run)
+
+5. Menudista, Note21, Liverpool -> Oferta específica Samsung + banco preferido
+
+(assert (orden-compra (customer-id 103)(item-tipo smartphone)(marca samsung)(modelo "Note21")(qty 2)(pago-tipo tarjeta)(banco-tarjeta liverpool)))
+(run)
+
+6. Mayorista, MacBookAir, contado -> Vale por compra grande + upsell + recomendación monitor
+
+(assert (orden-compra (customer-id 101)(item-tipo computador)(marca apple)(modelo "MacBookAir")(qty 20)(pago-tipo contado)))
+(run)
